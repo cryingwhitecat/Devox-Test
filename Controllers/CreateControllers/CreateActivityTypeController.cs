@@ -26,7 +26,7 @@ namespace DevoxAPI.Controllers
         {
             try
             {
-               var id =  _dataProvider.CreateActivityType(activityType);
+               var id = await  _dataProvider.CreateActivityTypeAsync(activityType);
                 _logger.Log("Activity type created successfully. {@ActivityType}", LogLevel.Debug, activityType);
                 return new JsonResult(new { status = "Activity type created successfully", ActivityTypeID = id });
             }
